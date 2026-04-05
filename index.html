@@ -1361,9 +1361,6 @@ renderCart();
   }
 
   window.envoyerCommande = envoyerCommande;
-</script>
-</body>
-</html>
 async function testCommande() {
   await addDoc(collection(db, "orders"), {
     nom: "Test",
@@ -1376,3 +1373,16 @@ async function testCommande() {
 }
 
 testCommande();
+    envoyerCommande({
+  nom: "Test",
+  telephone: "0600000000",
+  adresse: "Lyon",
+  produits: ["Tacos"],
+  total: 15
+
+      
+});
+</script>
+</body>
+</html>
+

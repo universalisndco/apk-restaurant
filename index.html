@@ -352,6 +352,22 @@ footer p{color:var(--text3);font-size:12px}
 .btn-modal-add:hover{background:var(--red2)}
 </style>
 </head>
+
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD530NcthQOQV8xp9tkkwBisKi8q-X8Scw",
+    authDomain: "apk-restaurant.firebaseapp.com",
+    projectId: "apk-restaurant",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  console.log("Firebase connecté !");
+</script>
 <body>
 
 <!-- ===== NAVIGATION ===== -->

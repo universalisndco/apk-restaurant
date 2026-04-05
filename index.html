@@ -1348,9 +1348,9 @@ renderCart();
 
   async function envoyerCommande(data) {
     await addDoc(collection(db, "orders"), {
-      nom: data.nom,
-      telephone: data.telephone,
-      adresse: data.adresse,
+      nom: data.coNom,
+      telephone: data.coTelephone,
+      adresse: data.coAdresse,
       produits: data.produits,
       total: data.total,
       statut: "En attente",

@@ -1335,3 +1335,15 @@ renderCart();
 </script>
 </body>
 </html>
+async function testCommande() {
+  await addDoc(collection(db, "orders"), {
+    nom: "Test",
+    total: 20,
+    statut: "En attente",
+    date: new Date()
+  });
+
+  console.log("Commande envoyée !");
+}
+
+testCommande();

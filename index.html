@@ -1375,9 +1375,10 @@ async function testCommande() {
 
       function placeOrder() {
   const data = {
-    nom: document.getElementById("nom").value,
+    nom: document.getElementById("coNom").value,
+    prenom: document.getElementById("coPrenom").value
     telephone: document.getElementById("telephone").value,
-    adresse: document.getElementById("adresse").value,
+    adresse: document.getElementById("coAdresse").value,
     produits: panier, // ton panier existant
     total: totalPanier // ton total existant
   };

@@ -1333,6 +1333,35 @@ document.getElementById('resDate').value=today;
 // Init cart render
 renderCart();
 </script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD530NcthQOQV8xp9tkkwBisKi8q-X8Scw",
+    authDomain: "apk-restaurant.firebaseapp.com",
+    projectId: "apk-restaurant",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function envoyerCommande(data) {
+    await addDoc(collection(db, "orders"), {
+      nom: data.nom,
+      telephone: data.telephone,
+      adresse: data.adresse,
+      produits: data.produits,
+      total: data.total,
+      statut: "En attente",
+      date: new Date()
+    });
+
+    alert("Commande envoyée !");
+  }
+
+  window.envoyerCommande = envoyerCommande;
+</script>
 </body>
 </html>
 async function testCommande() {

@@ -1375,10 +1375,10 @@ async function testCommande() {
 
       function placeOrder() {
   const data = {
-    nom: document.getElementById("coNom").value,
-    prenom: document.getElementById("coPrenom").value
+    nom: document.getElementById("Nom").value,
+    prenom: document.getElementById("Prenom").value
     telephone: document.getElementById("telephone").value,
-    adresse: document.getElementById("coAdresse").value,
+    adresse: document.getElementById("Adresse").value,
     produits: panier, // ton panier existant
     total: totalPanier // ton total existant
   };
@@ -1387,8 +1387,7 @@ async function testCommande() {
 }
 
     envoyerCommande({
-  coNom: "Test",
-  coVille: "Lyon"
+  Nom: "Test",
   telephone: "0600000000",
   coAdresse: "Lyon",
   produits: ["Tacos"],

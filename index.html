@@ -1372,14 +1372,18 @@ async function testCommande() {
   console.log("Commande envoyée !");
 }
 
-testCommande();
-    envoyerCommande({
-  nom: "Test",
-  telephone: "0600000000",
-  adresse: "Lyon",
-  produits: ["Tacos"],
-  total: 15
 
+      function placeOrder() {
+  const data = {
+    nom: document.getElementById("nom").value,
+    telephone: document.getElementById("telephone").value,
+    adresse: document.getElementById("adresse").value,
+    produits: panier, // ton panier existant
+    total: totalPanier // ton total existant
+  };
+
+  envoyerCommande(data);
+}
       
 });
 </script>
